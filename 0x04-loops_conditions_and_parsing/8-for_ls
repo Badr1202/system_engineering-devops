@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script lists files, showing only the part after the first "-"
+for file in *; do
+    if [[ $file != .* && $file == *-* ]]; then
+        echo "${file#*-}"
+    elif [[ $file != .* ]]; then
+        echo "$file"
+    fi
+done
